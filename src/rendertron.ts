@@ -5,7 +5,8 @@ import route from 'koa-route';
 import koaSend from 'koa-send';
 import koaLogger from 'koa-logger';
 import path from 'path';
-import puppeteer from 'puppeteer';
+import puppeteer from 'puppeteer-extra';
+import StealthPlugin from 'puppeteer-extra-plugin-stealth';
 import url from 'url';
 
 import { Renderer, ScreenshotError } from './renderer';
@@ -23,6 +24,7 @@ export class Rendertron {
   private host = process.env.HOST || null;
 
   async createRenderer(config: Config) {
+    puppeteer.use(StealthPlugin());
     const browser = await puppeteer.launch({ args: config.puppeteerArgs });
 
     browser.on('disconnected', () => {

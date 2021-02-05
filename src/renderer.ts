@@ -226,6 +226,10 @@ export class Renderer {
       `${dirname(parsedUrl.pathname || '')}`
     );
 
+    // const consent = await page.$(
+    //   "#jm > div.popup._open._l > section > button"
+    // );
+    // consent && consent.click();
     // Serialize page.
     const result = (await page.content()) as string;
 

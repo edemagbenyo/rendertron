@@ -44,6 +44,8 @@
     "koa-static": "^5.0.0",
     "performance-now": "^2.1.0",
     "puppeteer": "^5.5.0",
+    "puppeteer-extra": "^3.1.16",
+    "puppeteer-extra-plugin-stealth": "^2.7.3",
     "semver": "^7.3.4"
   },
   "devDependencies": {
